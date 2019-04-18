@@ -16,4 +16,9 @@ export class ContactsController {
     async findOne(@Param('id') id): Promise<Contact> {
         return this.contactsService.findOne(id);
     }
+
+    @Post()
+    async create(@Body() createContactDto: CreateContactDto): Promise<Contact> {
+        return this.contactsService.create(createContactDto);
+    }
 }

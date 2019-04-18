@@ -14,5 +14,10 @@ export class ContactsService {
     async findOne(id: string): Promise<Contact>{
         return await this.contactModel.find({_id: id});
     }
+    
+    async create(contact: Contact): Promise<Contact>{
+        const newItem = new this.contactModel(contact);
+        return await newItem.save();
+    }
 
 }

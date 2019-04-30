@@ -9,7 +9,7 @@ export class ContactsController {
     constructor(private readonly contactsService: ContactsService) {}
     // Get all contacts
     @Get()
-    async findAll(): Promise<Contact[]>{
+    async findAll(): Promise<Contact[]> {
         return this.contactsService.findAll();
     }
 
